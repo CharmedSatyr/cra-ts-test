@@ -1,8 +1,10 @@
-import faker from 'faker';
+import { name as fake } from 'faker';
 import React, { Component, ReactNode } from 'react';
 
+type Welcome = 'Hello to ' | 'Hello, ';
+
 interface IProps {
-  bar: string;
+  bar: Welcome;
 }
 
 interface IState {
@@ -16,7 +18,7 @@ class Foo extends Component<IProps, IState> {
   }
   public componentDidMount(): void {
     setInterval((): void => {
-      const newName: string = faker.name.firstName();
+      const newName: string = fake.firstName();
       this.updateName(newName);
     }, 1000);
   }
@@ -27,8 +29,8 @@ class Foo extends Component<IProps, IState> {
       </h1>
     );
   }
-  private updateName(name: string): void {
-    this.setState({ name });
+  private updateName(newName: string): void {
+    this.setState({ name: newName });
   }
 }
 
