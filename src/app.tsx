@@ -2,7 +2,7 @@ import React, { SFC } from 'react';
 
 import Foo from './foo';
 
-import logo from './logo.svg';
+import logo from './assets/logo.svg';
 
 import './app.css';
 
